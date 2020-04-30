@@ -1,16 +1,37 @@
-<h1><%= user.firstname %>'s Profile</h1>
 
-<div class="row">
+<div class="row" id="userPro">
+   
     <div class="col s12 s4">
         <img src="<%=user.pic%>" alt="profile pic">
     </div>
-
     <div>
-        <p><strong>Name:</strong> <%= user.firstName %> <%= user.lastname %></p>
-        <p><strong>Birthday:</strong> <%= moment(user.birthday).format('dddd MMMM Do[,] YYYY' ) %></p>
-        <p><strong>Account Created On:</strong><%= moment(user.createdAt).format('dddd MMMM Do[,] YYYY') %></p>
-        <p>
-            <strong>Bio:</strong><%= user.bio %>
-        </p>
+        <p><%= user.username %> </p> 
+        <p><%= user.bio %></p>
     </div>
+
 </div>
+
+<div class="row left" id="tho">
+<h1>
+    My Thoughts
+</h1>
+
+<% posts.forEach(function(p) { %>
+    <div class="well">
+        <% if (p.userId === user.id) { %>
+      <h2><%= p.content %></h2>
+      <% if(p.tags.length > 0){ %>
+          <% p.tags.forEach(function(t) { %>
+          <P><%= t.tagName %></p>
+          <% }); %>
+    <%  } %>
+</div>
+<form id="delete-form" method="POST" action="/profile/user?_method=DELETE">
+    <input type="hidden" name="postId" value="<%=p.id%>">
+    <input type="submit" class="btn-small red" value="DELETE Post!">
+</form>
+<button><a href="/post">All Posts</a></button>
+<%}%>
+<% }); %>
+</div>
+

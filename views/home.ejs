@@ -1,2 +1,17 @@
 <h1>Home Page</h1>
-<p>More stuff will go here later</p>
+<div>
+    <h4><%= stat[0].country %></h4>
+    <p><strong>Total Cases: </strong><%= stat[0].cases %></p>
+    <p><strong>Today Cases: </strong><%= stat[0].todayCases %></p>
+    <p><strong>Total Deaths: </strong><%= stat[0].deaths %></p>
+    <p><strong>Today Deaths: </strong><%= stat[0].todayDeaths %></p>
+    <p><strong>Recovered</strong>: <%= stat[0].recovered %></p>
+</div>
+<div>
+    <h4><%= stat[1].country %></h4>
+    <p><strong>Total Cases: </strong><%= stat[1].cases %></p>
+    <p><strong>Today Cases: </strong><%= stat[1].todayCases %></p>
+    <p><strong>Total Deaths: </strong><%= stat[1].deaths %></p>
+    <p><strong>Today Deaths: </strong><%= stat[1].todayDeaths %></p>
+    <p><strong>Recovered</strong>: <%= stat[0].recovered %></p>
+</div>

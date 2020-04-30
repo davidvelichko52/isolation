@@ -8,6 +8,8 @@ let express = require('express')
 let flash = require('connect-flash')
 let layouts = require('express-ejs-layouts')
 let session = require('express-session')
+let methodOverride = require('method-override')
+const axios = require('axios');
 // Create an app instance
 let app = express()
 
@@ -25,6 +27,8 @@ app.use(layouts)
 
 // Set up the static folder
 app.use(express.static('static'))
+
+app.use(methodOverride('_method'))
 
 // Decrypt the variables coming in via POST routes (from forms)
 app.use(express.urlencoded({ extended: false }))
@@ -58,10 +62,18 @@ app.use((req, res, next) => {
 // Controllers
 app.use('/auth', require('./controllers/auth'))
 app.use('/profile', require('./controllers/profile'))
+app.use('/post', require('./controllers/post'))
+
 
 // Create a home page route
 app.get('/', (req, res) => {
-    res.render('home')
+    var staturl = 'https://coronavirus-19-api.herokuapp.com/countries';
+    // Use request to call the API
+    axios.get(staturl).then( function(apiResponse) {
+      var stat = apiResponse.data
+      
+      res.render('home', { stat: stat });
+    })
 })
 
 // Create a wildcard (catch-all)

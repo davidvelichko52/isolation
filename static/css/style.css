@@ -2,7 +2,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: bisque;
+    background-color: rgb(103, 151, 170);
     text-align: center;
 }
 
@@ -18,4 +18,17 @@ main {
 
 .logo {
     font-size: 2.1rem;
+}
+img{
+    height: 200px;
+    width: auto;
+    border-radius: 150px;
+}
+
+#userPro{
+    margin-top: 20px;
+}
+
+#tho{
+    margin-left: 20px;
 }

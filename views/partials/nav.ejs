@@ -1,6 +1,10 @@
-<nav class="indigo lighten-3">
+<nav class="grey">
     <div class="nav-wrapper">
-        <a href="#" class="brand-logo">BB</a>
+        <% if (user) { %>
+        <a href="#" class="brand-logo center" ><%= user.firstname %> <%=user.lastname %> </a>
+        <% } else { %>
+            <a href="#" class="brand-logo center" >Loneliness Support</a>
+        <% } %>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger">
             <i class="material-icons">menu</i>
         </a>
@@ -18,10 +22,19 @@
                     </li>
                 <% } %>
                 <li>
+                    <a href="/profile/getAJoke">Get A Joke</a>
+                </li>
+                <li>
+                    <a href="/profile/addPost">Add A Post</a>
+                </li>
+                <li>
+                    <a href="/post">All Posts</a>
+                </li>
+                <li>
                     <a href="/auth/logout">Logout</a>
                 </li>
                 <li>
-                    Hi, <%= user.firstname %>
+
                 </li>
             <% } else { %>
                 <li>
@@ -48,10 +61,16 @@
             </li>
         <% } %>
         <li>
-            <a href="/auth/logout">Logout</a>
+            <a href="/profile/getAJoke">Get A Joke</a>
         </li>
         <li>
-            Hi, <%= user.firstname %>
+            <a href="/profile/addPost">Add A Post</a>
+        </li>
+        <li>
+            <a href="/post">All Posts</a>
+        </li>
+        <li>
+            <a href="/auth/logout">Logout</a>
         </li>
     <% } else { %>
         <li>

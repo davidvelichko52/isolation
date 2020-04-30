@@ -1,0 +1,18 @@
+<h1>Create A Post</h1>
+
+<form action="/profile/user" method="POST">
+
+
+  <div class="form-group">
+    <label for="content">Write what you feel</label>
+    <input type="text" class="form-control" id="content" name="content" required>
+  </div>
+<hr>
+  <div class="form-group">
+    <label for="tagName">Tag Name</label>
+    <textarea type="text" class="form-control" id="tagName" name="tagName" required></textarea>
+  </div>
+
+  <input type="hidden" name="userId" value="<%=user.id%>">
+  <input type="submit" class="btn btn-primary">
+</form>
