@@ -30,20 +30,35 @@ router.get('/user',(req, res) => {
     })
 })
 
-router.put('/user/user/edit', (req, res) => {
+router.put('/user', (req, res) => {
 
   db.post.update(
       req.body,
-      { where: { id: req.params.id } }
+      { where: { id: req.body.postId } }
   )
   .then(() =>{
-      res.redirect('/profile' + req.params.id)
+      res.redirect('/profile/user')
   })
   .catch(err => {
-      console(err)
+      console.log(err)
       res.render('error')
   })
 })
+
+
+router.get('/user/edit/:id', (req, res) =>{
+  db.post.findOne({
+    where: { id: req.params.id }
+  })
+  .then((posts) => {
+      res.render('profile/edit', { posts: posts })
+  })
+  .catch(err => {
+      res.send('ERROR')
+  })
+})
+
+
 
 router.delete('/user', (req, res) => {
   db.tagsPosts.destroy({
@@ -66,7 +81,7 @@ router.delete('/user', (req, res) => {
   })
   .catch(err => {
       console.log(err)
-      res.render('error')
+      res.send('Error')
   })
 })
 

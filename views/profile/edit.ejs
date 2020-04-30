@@ -1,16 +1,17 @@
 <h1>Edit Post</h1>
 
 <div class="row">
-    <form class="col s12" method="POST" action="/profile/user/edit?_method=PUT">
+    <form class="col s12" method="POST" action="/profile/user?_method=PUT">
         <div class="row">
             <div class="input-field col s4">
-                <input class="form-control" id="content" name="content"  type="text" value="<%=post.content%>">
+                <input class="form-control" id="content" name="content"  type="text" value="<%=posts.content%>">
+                <input type="hidden" name="postId" value="<%=posts.id%>">
                 <label  for="content">Write what you feel</label>
             </div>
 
         </div>
         <button class="btn waves-effect waves-light green" type="submit">Submit
-            <i class="material-icons right">send</i>
+            <i class="material-icons right"></i>
         </button>
     </form>
 </div>

@@ -30,7 +30,9 @@
     <input type="hidden" name="postId" value="<%=p.id%>">
     <input type="submit" class="btn-small red" value="DELETE Post!">
 </form>
-<button><a href="/post">All Posts</a></button>
+<a href="/profile/user/edit/<%=p.id%>" class="btm-small blue lighten-2">
+    Edit Team
+</a>
 <%}%>
 <% }); %>
 </div>
