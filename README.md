@@ -2,6 +2,9 @@
 
 this is a boiler plate for an Express app with local user authentication. It exists so I have a customized boilerplate and don't have to start from scratch on all my projects.
 
+## website Link https://proj2-isolation.herokuapp.com/
+
+
 ## What It Includes
 
 * Local Auth (email and password)
@@ -12,6 +15,10 @@ this is a boiler plate for an Express app with local user authentication. It exi
 * EJS templating and ejs layouts
 * Sequelize user model
 * Materialize styling - nav and footer
+* Method-override
+* 2 API's
+
+
 
 ## Included Models
 **User Model**
