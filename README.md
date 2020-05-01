@@ -67,6 +67,8 @@ this is a boiler plate for an Express app with local user authentication. It exi
 | GET | `/` | Home page - displays coronavirus api and login button |
 | GET | `*` | Catch-all for 404s |
 
+
+
 **Routes in controllers/auth.js**
 
 | Method | path | purpose |
@@ -81,9 +83,11 @@ this is a boiler plate for an Express app with local user authentication. It exi
 
 | Method | Path | Purpose |
 | ------ | ---------------------- | ---------------------------- |
-| GET | `/profile/user` | Show user dashboard (authorized user only) |
+| GET | `/profile/user` | Show user dashboard (authorized user only) - has posts and user info |
 | GET | `/profile/admin` | Show admin dashboard (authorized admin only) |
 | GET | `/profile/guest/:id` | View user dashboard as guest (authorized user only) |
+
+
 
 ## Directions For Use
 
