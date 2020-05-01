@@ -37,6 +37,27 @@ this is a boiler plate for an Express app with local user authentication. It exi
 | createdAt | Date | Automatically added by Sequelize |
 | updatedAt | Date | Automatically added by Sequelize |
 
+
+**Post Model**
+| column | Type | Notes |
+|------------- | ---------- | -----------------|
+| id | Integer | Serial primary key |
+| userId | Integer | - |
+| content | text | - |
+
+**Tags Model**
+| column | Type | Notes |
+|------------- | ---------- | -----------------|
+| id | Integer | Serial primary key |
+| tagName | text | - |
+
+**tagsPosts Model**
+| column | Type | Notes |
+|------------- | ---------- | -----------------|
+| id | Integer | Serial primary key |
+| postId | Integer | - |
+| tagId | Integrer | - |
+
 ## Included Routes
 
 **Routes in Index (main)**
