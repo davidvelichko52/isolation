@@ -64,7 +64,7 @@ this is a boiler plate for an Express app with local user authentication. It exi
 
 | Method | path | purpose |
 | ----| ------------------------- | --------------- |
-| GET | `/` | Home page - displays coronavirus api and login button |
+| GET | `/` | Home page - displays coronavirus API and login button |
 | GET | `*` | Catch-all for 404s |
 
 
@@ -84,8 +84,19 @@ this is a boiler plate for an Express app with local user authentication. It exi
 | Method | Path | Purpose |
 | ------ | ---------------------- | ---------------------------- |
 | GET | `/profile/user` | Show user dashboard (authorized user only) - has posts and user info |
-| GET | `/profile/admin` | Show admin dashboard (authorized admin only) |
-| GET | `/profile/guest/:id` | View user dashboard as guest (authorized user only) |
+| PUT | `/profile/user` | To edit post on profile page |
+| GET | `/profile/user/edit/:id` | Shows form to edit the post |
+| DELETE | `/profile/user` | Button to delete post |
+| POST | `/profile/user` | Process form data from making a post with a tag |
+| GET | `/profile/addPost` | Shows form to add a post |
+| GET | `/profile/getAJoke` | Shows page with API for jokes |
+
+**Routes in controllers/post.js**
+
+| Method | Path | Purpose |
+| ------ | ---------------------- | ---------------------------- |
+| GET | `/profile/post` | Show user all the posts made by other users |
+
 
 
 
