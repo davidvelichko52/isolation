@@ -1,6 +1,9 @@
-# Node Auth Boilerplate
+# Isolation Emotional Outlet
 
-this is a boiler plate for an Express app with local user authentication. It exists so I have a customized boilerplate and don't have to start from scratch on all my projects.
+This website was made for people that are stuck at home during quarantine and don't have people they can express their emotions to. A user can signup and can post a post and have the ability to see it on his or her page and have the option to delete or to edit. Also the user can also see everyones post and they are kept anonymous so that everyone can see how other people are doing without knowing who wrote it. Also if the the user needs a emotinal boost or some humour they can go to the get a joke page anf watch jokes that come from an API. 
+
+## website Link https://proj2-isolation.herokuapp.com/
+
 
 ## What It Includes
 
@@ -12,6 +15,10 @@ this is a boiler plate for an Express app with local user authentication. It exi
 * EJS templating and ejs layouts
 * Sequelize user model
 * Materialize styling - nav and footer
+* Method-override
+* 2 API's
+
+
 
 ## Included Models
 **User Model**
@@ -30,14 +37,37 @@ this is a boiler plate for an Express app with local user authentication. It exi
 | createdAt | Date | Automatically added by Sequelize |
 | updatedAt | Date | Automatically added by Sequelize |
 
+
+**Post Model**
+| column | Type | Notes |
+|------------- | ---------- | -----------------|
+| id | Integer | Serial primary key |
+| userId | Integer | - |
+| content | text | - |
+
+**Tags Model**
+| column | Type | Notes |
+|------------- | ---------- | -----------------|
+| id | Integer | Serial primary key |
+| tagName | text | - |
+
+**tagsPosts Model**
+| column | Type | Notes |
+|------------- | ---------- | -----------------|
+| id | Integer | Serial primary key |
+| postId | Integer | - |
+| tagId | Integrer | - |
+
 ## Included Routes
 
 **Routes in Index (main)**
 
 | Method | path | purpose |
 | ----| ------------------------- | --------------- |
-| GET | `/` | Home page |
+| GET | `/` | Home page - displays coronavirus API and login button |
 | GET | `*` | Catch-all for 404s |
+
+
 
 **Routes in controllers/auth.js**
 
@@ -53,9 +83,22 @@ this is a boiler plate for an Express app with local user authentication. It exi
 
 | Method | Path | Purpose |
 | ------ | ---------------------- | ---------------------------- |
-| GET | `/profile/user` | Show user dashboard (authorized user only) |
-| GET | `/profile/admin` | Show admin dashboard (authorized admin only) |
-| GET | `/profile/guest/:id` | View user dashboard as guest (authorized user only) |
+| GET | `/profile/user` | Show user dashboard (authorized user only) - has posts and user info |
+| PUT | `/profile/user` | To edit post on profile page |
+| GET | `/profile/user/edit/:id` | Shows form to edit the post |
+| DELETE | `/profile/user` | Button to delete post |
+| POST | `/profile/user` | Process form data from making a post with a tag |
+| GET | `/profile/addPost` | Shows form to add a post |
+| GET | `/profile/getAJoke` | Shows page with API for jokes |
+
+**Routes in controllers/post.js**
+
+| Method | Path | Purpose |
+| ------ | ---------------------- | ---------------------------- |
+| GET | `/profile/post` | Show user all the posts made by other users |
+
+
+
 
 ## Directions For Use
 
