@@ -1,6 +1,6 @@
 # Node Auth Boilerplate
 
-this is a boiler plate for an Express app with local user authentication. It exists so I have a customized boilerplate and don't have to start from scratch on all my projects.
+This website was made for people that are stuck at home during quarantine and don't have people they can express their emotions to. A user can signup and can post a post and have the ability to see it on his or her page and have the option to delete or to edit. Also the user can also see everyones post and they are kept anonymous so that everyone can see how other people are doing without knowing who wrote it. Also if the the user needs a emotinal boost or some humour they can go to the get a joke page anf watch jokes that come from an API. 
 
 ## website Link https://proj2-isolation.herokuapp.com/
 
