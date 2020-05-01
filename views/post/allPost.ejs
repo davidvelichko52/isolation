@@ -8,7 +8,7 @@
     
     <% posts.forEach(function(p) { %>
         <div class="well" id="post">
-            <% if (p.userId === user.id) { %>
+            
           <h4><%= p.content %></h3>
     
           <% if(p.tags.length > 0){ %>
@@ -16,8 +16,7 @@
               <P>#<%= t.tagName %></p>
               <% }); %>
         <%  } %>
-    
-    <%}%>
-    <% }); %>
     </div>
-    </div>
+    <br>
+        <% }); %>
+</div>

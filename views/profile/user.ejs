@@ -19,7 +19,7 @@
 <hr>
 
 <% posts.forEach(function(p) { %>
-    <div class="well" id="post">
+   
         <% if (p.userId === user.id) { %>
       <h4><%= p.content %></h3>
 
@@ -28,17 +28,17 @@
           <P>#<%= t.tagName %></p>
           <% }); %>
     <%  } %>
+    
+    <form id="delete-form" method="POST" action="/profile/user?_method=DELETE">
+        <input type="hidden" name="postId" value="<%=p.id%>">
+        <button class="waves-effect waves-light btn-small" type="submit">
+            <i class="material-icons center">delete</i>
+        </button>
+    </form>
+    <a class="waves-effect waves-light btn-small" href="/profile/user/edit/<%=p.id%>"><i class="material-icons center">edit</i></a>
 <hr>
-<form id="delete-form" method="POST" action="/profile/user?_method=DELETE">
-    <input type="hidden" name="postId" value="<%=p.id%>">
-    <button class="waves-effect waves-light btn-small" type="submit">
-        <i class="material-icons center">delete</i>
-    </button>
-</form>
-<a class="waves-effect waves-light btn-small" href="/profile/user/edit/<%=p.id%>"><i class="material-icons center">edit</i></a>
 <%}%>
 <% }); %>
-</div>
 </div>
 
 
