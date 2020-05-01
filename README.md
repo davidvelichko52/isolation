@@ -64,7 +64,7 @@ this is a boiler plate for an Express app with local user authentication. It exi
 
 | Method | path | purpose |
 | ----| ------------------------- | --------------- |
-| GET | `/` | Home page |
+| GET | `/` | Home page - displays coronavirus api and login button |
 | GET | `*` | Catch-all for 404s |
 
 **Routes in controllers/auth.js**
