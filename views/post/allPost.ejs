@@ -1,9 +1,23 @@
-<% posts.forEach(function(p) { %>
-      <h2><%= p.content %></h2>
-      <% if(p.tags.length > 0){ %>
-          <% p.tags.forEach(function(t) { %>
-          <P><%= t.tagName %></p>
-          <% }); %>
-    <%  } %>
-<% }); %>
 
+
+<div class="row center" id="tho">
+    <h1 id="userd">
+        All Posts
+    </h1 >
+    <hr>
+    
+    <% posts.forEach(function(p) { %>
+        <div class="well" id="post">
+            <% if (p.userId === user.id) { %>
+          <h4><%= p.content %></h3>
+    
+          <% if(p.tags.length > 0){ %>
+              <% p.tags.forEach(function(t) { %>
+              <P>#<%= t.tagName %></p>
+              <% }); %>
+        <%  } %>
+    
+    <%}%>
+    <% }); %>
+    </div>
+    </div>

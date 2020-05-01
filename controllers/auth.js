@@ -10,7 +10,7 @@ router.get('/login', (req, res) => {
 
 // POST /auth/login - this is a place for the login form to post to
 router.post('/login', passport.authenticate('local', {
-    successFlash: 'Successful Login - Welcome Back!',
+    // successFlash: 'Successful Login - Welcome Back!',
     successRedirect: '/profile/user',
     failureFlash: 'Invalid Credentials',
     failureRedirect: '/auth/login'
@@ -38,7 +38,7 @@ router.post('/signup', (req, res, next) => {
                 // Good - this was expected
                 // auto-login with passport
                 passport.authenticate('local', {
-                    successFlash: 'Successful Login - Welcome!',
+                    // successFlash: 'Successful Login - Welcome!',
                     successRedirect: '/profile/user',
                     failureFlash: 'Invalid Credentials',
                     failureRedirect: '/auth/login'
@@ -73,7 +73,7 @@ router.post('/signup', (req, res, next) => {
 router.get('/logout', (req, res) => {
     // remove user data from session
     req.logout()
-    req.flash('success', 'BYE BYE! 👋✌️')
+    // req.flash('success', 'BYE BYE! 👋✌️')
     res.redirect('/')
 })
 

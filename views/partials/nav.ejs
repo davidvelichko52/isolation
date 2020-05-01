@@ -1,47 +1,47 @@
-<nav class="grey">
+<nav class="grey lighten-2">
     <div class="nav-wrapper">
         <% if (user) { %>
-        <a href="#" class="brand-logo center" ><%= user.firstname %> <%=user.lastname %> </a>
+        <a id="navname" href="#" class="brand-logo center" ><%= user.firstname %> <%=user.lastname %> </a>
         <% } else { %>
-            <a href="#" class="brand-logo center" >Loneliness Support</a>
+            <a id="navf" href="#" class="brand-logo center" style="font-family: 'Bebas Neue'; color:black">Emotional Outlet</a>
         <% } %>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+        <a id="navf" href="#" data-target="mobile-demo" class="sidenav-trigger">
             <i class="material-icons">menu</i>
         </a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <ul  id="nav-mobile" class="right hide-on-med-and-down">
             <li>
-                <a href="/">Home</a>
+                <a id="navf" href="/">Home</a>
             </li>
             <% if (user) { %>
                 <li>
-                    <a href="/profile/user">Profile Page</a>
+                    <a id="navf" href="/profile/user">Profile Page</a>
                 </li>
                 <% if(user.admin) { %>
                     <li>
-                        <a href="/profile/admin">Admin Page</a>
+                        <a id="navf" href="/profile/admin">Admin Page</a>
                     </li>
                 <% } %>
                 <li>
-                    <a href="/profile/getAJoke">Get A Joke</a>
+                    <a id="navf" href="/profile/getAJoke">Get A Joke</a>
                 </li>
                 <li>
-                    <a href="/profile/addPost">Add A Post</a>
+                    <a id="navf" href="/profile/addPost">Add A Post</a>
                 </li>
                 <li>
-                    <a href="/post">All Posts</a>
+                    <a id="navf" href="/post">All Posts</a>
                 </li>
                 <li>
-                    <a href="/auth/logout">Logout</a>
+                    <a id="navf" href="/auth/logout">Logout</a>
                 </li>
                 <li>
 
                 </li>
             <% } else { %>
                 <li>
-                    <a href="/auth/login">Login</a>
+                    <a id="navf" href="/auth/login">Login</a>
                 </li>
                 <li>
-                    <a href="/auth/signup">Signup</a>
+                    <a id="navf" href="/auth/signup">Signup</a>
                 </li>
             <% } %>
         </ul>

@@ -1,4 +1,4 @@
-<h1>Create A Post</h1>
+<h1 id="userd">Express What's Going On</h1>
 
 <form action="/profile/user" method="POST">
 
@@ -7,12 +7,15 @@
     <label for="content">Write what you feel</label>
     <input type="text" class="form-control" id="content" name="content" required>
   </div>
-<hr>
+<br>
+<br>
+
   <div class="form-group">
     <label for="tagName">Tag Name</label>
-    <textarea type="text" class="form-control" id="tagName" name="tagName" required></textarea>
+    <input type="text" class="form-control" id="tagName" name="tagName" required>
   </div>
 
   <input type="hidden" name="userId" value="<%=user.id%>">
   <input type="submit" class="btn btn-primary">
+
 </form>

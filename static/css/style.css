@@ -2,7 +2,7 @@ html,
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(103, 151, 170);
+    background-color: rgb(255, 255, 255);
     text-align: center;
 }
 
@@ -20,9 +20,10 @@ main {
     font-size: 2.1rem;
 }
 img{
-    height: 200px;
+    height: 300px;
     width: auto;
-    border-radius: 150px;
+    border-radius: 200px;
+    border: 8px solid rgb(0, 0, 0);
 }
 
 #userPro{
@@ -31,4 +32,44 @@ img{
 
 #tho{
     margin-left: 20px;
+}
+
+#homet{
+    font-family: 'Bowlby One SC', cursive;
+    color: rgb(50, 148, 212);
+}
+#log{
+    font-family: 'Bowlby One SC', cursive;
+}
+
+#statHome{
+    font-family: 'Poiret One', cursive;
+}
+
+#userd{
+    font-family: 'Squada One', cursive;
+}
+#post{
+    border: 2px solid rgb(0, 0, 0)
+}
+
+#jokeh{
+    
+    font-family: 'Bangers', cursive; 
+}
+
+#joke{
+    margin-top: 200px;
+}
+
+footer{
+    text-align: center;
+}
+#navf{
+    color: black;
+}
+
+#navname{
+    font-family: 'Squada One', cursive;
+    color: black;
 }
