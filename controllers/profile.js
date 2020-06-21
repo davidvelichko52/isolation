@@ -30,20 +30,20 @@ router.get('/user',(req, res) => {
     })
 })
 
-router.put('/user', (req, res) => {
+// router.put('/user', (req, res) => {
 
-  db.post.update(
-      req.body,
-      { where: { id: req.body.postId } }
-  )
-  .then(() =>{
-      res.redirect('/profile/user')
-  })
-  .catch(err => {
-      console.log(err)
-      res.render('error')
-  })
-})
+//   db.post.update(
+//       req.body,
+//       { where: { id: req.body.postId } }
+//   )
+//   .then(() =>{
+//       res.redirect('/profile/user')
+//   })
+//   .catch(err => {
+//       console.log(err)
+//       res.render('error')
+//   })
+// })
 
 
 router.get('/user/edit/:id', (req, res) =>{
